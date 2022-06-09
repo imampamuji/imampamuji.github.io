@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-slate-900 dark:bg-teal-300 ;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+.navbar-fix {
+  @apply  bg-white bg-opacity-60 drop-shadow-md dark:bg-slate-900 dark:bg-opacity-60 dark:border-b dark:border-teal-300;
+  backdrop-filter: blur(5px);
+}
+
+.removeTxtShadow::-moz-selection {
+    text-shadow: none;
+    background: #333;
+    color: #fff;
+}
+
+.removeTxtShadow::selection {
+    text-shadow: none;
+    background: #333;
+    color: #fff;
+}
+
+.removeTxtShadowDark {
+    text-shadow: none;
+    background: #333;
+    color: #fff;
+}
+
+.strokeHome {
+  text-shadow: rgb(255, 255, 255) 5px 0px 0px,
+    rgb(255, 255, 255) 4.90033px 0.993347px 0px,
+    rgb(255, 255, 255) 4.60531px 1.94709px 0px,
+    rgb(255, 255, 255) 4.12668px 2.82321px 0px,
+    rgb(255, 255, 255) 3.48353px 3.58678px 0px,
+    rgb(255, 255, 255) 2.70151px 4.20736px 0px,
+    rgb(255, 255, 255) 1.81179px 4.6602px 0px,
+    rgb(255, 255, 255) 0.849836px 4.92725px 0px,
+    rgb(255, 255, 255) -0.145998px 4.99787px 0px,
+    rgb(255, 255, 255) -1.13601px 4.86924px 0px,
+    rgb(255, 255, 255) -2.08073px 4.54649px 0px,
+    rgb(255, 255, 255) -2.94251px 4.04248px 0px,
+    rgb(255, 255, 255) -3.68697px 3.37732px 0px,
+    rgb(255, 255, 255) -4.28444px 2.57751px 0px,
+    rgb(255, 255, 255) -4.71111px 1.67494px 0px,
+    rgb(255, 255, 255) -4.94996px 0.7056px 0px,
+    rgb(255, 255, 255) -4.99147px -0.291871px 0px,
+    rgb(255, 255, 255) -4.83399px -1.27771px 0px,
+    rgb(255, 255, 255) -4.48379px -2.2126px 0px,
+    rgb(255, 255, 255) -3.95484px -3.05929px 0px,
+    rgb(255, 255, 255) -3.26822px -3.78401px 0px,
+    rgb(255, 255, 255) -2.4513px -4.35788px 0px,
+    rgb(255, 255, 255) -1.53666px -4.75801px 0px,
+    rgb(255, 255, 255) -0.560763px -4.96845px 0px,
+    rgb(255, 255, 255) 0.437495px -4.98082px 0px,
+    rgb(255, 255, 255) 1.41831px -4.79462px 0px,
+    rgb(255, 255, 255) 2.34258px -4.41727px 0px,
+    rgb(255, 255, 255) 3.17346px -3.86382px 0px,
+    rgb(255, 255, 255) 3.87783px -3.15633px 0px,
+    rgb(255, 255, 255) 4.4276px -2.32301px 0px,
+    rgb(255, 255, 255) 4.80085px -1.39708px 0px,
+    rgb(255, 255, 255) 4.98271px -0.415447px 0px;
+}
+
+.btn-frame {
+  @apply border-[3px] h-[40px] w-[190px]  border-violet-600 dark:border-violet-400 rounded-lg flex hover:bg-violet-600 active:scale-95 transition duration-500 ease-in-out ;
+}
+
+.btn-txt {
+  @apply self-center mx-auto text-violet-600 group-hover:text-white dark:text-violet-400  font-semibold text-sm transition duration-500 ease-in-out;
+}
+
+.underline-animate {
+ @apply inline relative after:absolute after:bg-violet-600 after:bottom-0 after:left-0 after:h-[2px] lg:after:h-[5px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 ;
+}
+
+#dark-toggle:checked ~ label div.toggle-circle {
+  @apply translate-x-3;
+}
+
+
