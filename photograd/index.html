@@ -3,90 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhotoGrad - Jasa Edit Foto Wisuda Profesional</title>
+    <meta name="description" content="Kecewa dengan hasil foto wisuda dari vendor? Kami solusinya. Jasa edit foto profesional untuk hasil yang lebih hidup, detail, dan personal.">
+    
+    <title>PhotoGrad - Sulap Foto Wisuda Jadi Mahakarya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splide/4.1.4/css/splide.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/splide/4.1.4/js/splide.min.js"></script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
         .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
         .animate-float { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        .section-title { font-weight: 800; }
+        .subtle-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        /* Style untuk FAQ Accordion */
+        .faq-item summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] .faq-icon {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="text-gray-800">
     <!-- Header -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-camera text-white text-sm"></i>
+                <a href="#beranda" class="flex items-center space-x-3">
+                    <div class="w-9 h-9 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                        <i class="fas fa-wand-magic-sparkles text-white"></i>
                     </div>
-                    <span class="text-xl font-bold text-gray-900">PhotoGrad</span>
+                    <span class="text-2xl font-bold text-gray-900">PhotoGrad</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#portofolio" class="text-gray-600 hover:text-indigo-600 transition-colors font-medium">Portofolio</a>
+                    <a href="#proses" class="text-gray-600 hover:text-indigo-600 transition-colors font-medium">Proses Kami</a>
+                    <a href="#harga" class="text-gray-600 hover:text-indigo-600 transition-colors font-medium">Harga</a>
+                    <a href="#faq" class="text-gray-600 hover:text-indigo-600 transition-colors font-medium">FAQ</a>
+                    <a href="#testimoni" class="text-gray-600 hover:text-indigo-600 transition-colors font-medium">Testimoni</a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#beranda" class="text-gray-700 hover:text-blue-600 transition-colors">Beranda</a>
-                    <a href="#portofolio" class="text-gray-700 hover:text-blue-600 transition-colors">Portofolio</a>
-                    <a href="#harga" class="text-gray-700 hover:text-blue-600 transition-colors">Harga</a>
-                    <a href="#testimoni" class="text-gray-700 hover:text-blue-600 transition-colors">Testimoni</a>
-                </div>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20menyempurnakan%20foto%20wisuda%20saya." target="_blank" class="bg-indigo-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg">
                     Hubungi Kami
-                </button>
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="beranda" class="gradient-bg min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-white">
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Edit Foto Wisuda
-                        <span class="text-yellow-300">Profesional</span>
+    <section id="beranda" class="gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-white text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+                        Kecewa Hasil Foto Wisuda?
+                        <span class="block text-yellow-300">Kami Punya Solusinya.</span>
                     </h1>
-                    <p class="text-xl mb-8 text-blue-100">
-                        Jadikan momen wisuda Anda lebih berkesan dengan hasil edit foto yang stunning dan profesional. 
-                        Kualitas terbaik, harga terjangkau, hasil memuaskan.
+                    <p class="text-lg md:text-xl mb-10 text-indigo-100 max-w-lg mx-auto lg:mx-0">
+                        Jangan biarkan momen sekali seumur hidup jadi kenangan yang kurang sempurna. Kami menyulap foto standar dari vendor menjadi mahakarya yang layak Anda banggakan.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
-                            Lihat Portofolio
-                        </button>
-                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                            Konsultasi Gratis
-                        </button>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#proses" class="bg-yellow-400 text-indigo-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition-all transform hover:scale-105 text-center">
+                            Lihat Cara Kerjanya
+                        </a>
+                        <a href="#portofolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-indigo-600 transition-all text-center">
+                            Buktikan Hasilnya
+                        </a>
                     </div>
                 </div>
                 <div class="animate-float">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white/20 rounded-lg p-4 text-center text-white">
-                                <i class="fas fa-magic text-3xl mb-2"></i>
-                                <p class="font-semibold">Retouching</p>
-                            </div>
-                            <div class="bg-white/20 rounded-lg p-4 text-center text-white">
-                                <i class="fas fa-palette text-3xl mb-2"></i>
-                                <p class="font-semibold">Color Grading</p>
-                            </div>
-                            <div class="bg-white/20 rounded-lg p-4 text-center text-white">
-                                <i class="fas fa-adjust text-3xl mb-2"></i>
-                                <p class="font-semibold">Lighting Fix</p>
-                            </div>
-                            <div class="bg-white/20 rounded-lg p-4 text-center text-white">
-                                <i class="fas fa-crop text-3xl mb-2"></i>
-                                <p class="font-semibold">Cropping</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img-comparison-slider class="w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                        <img slot="first" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop&auto=format&q=60&sat=-80&con=-30" alt="Foto wisuda sebelum diedit" class="w-full h-auto object-cover" />
+                        <img slot="second" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop&auto=format&q=80&sat=15&con=25&bright=10" alt="Foto wisuda setelah diedit profesional" class="w-full h-auto object-cover" />
+                    </img-comparison-slider>
                 </div>
             </div>
         </div>
@@ -96,263 +106,169 @@
     <section id="portofolio" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Portofolio Kami</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Lihat hasil kerja profesional kami dalam mengedit foto wisuda dengan kualitas terbaik
-                </p>
+                <h2 class="text-4xl md:text-5xl section-title text-gray-900 mb-4">Lihat Sentuhan Ajaib Kami</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Dari warna kusam hingga objek mengganggu, tidak ada yang tidak bisa kami perbaiki.</p>
             </div>
-            
-            <!-- Portfolio Slider -->
             <div class="splide" id="portfolio-slider">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <!-- Slide 1 -->
-                        <li class="splide__slide px-4">
-                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="p-6">
-                                    <h3 class="font-semibold text-xl mb-4 text-center text-gray-900">Foto Wisuda Outdoor - Color Grading</h3>
-                                    <div class="mb-6">
-                                        <img-comparison-slider class="w-full rounded-xl overflow-hidden">
-                                            <img slot="first" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop&auto=format&q=60&sat=-80&con=-30" alt="Before - Foto wisuda outdoor mentah" class="w-full h-80 object-cover" />
-                                            <img slot="second" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop&auto=format&q=60&sat=-80&con=-30" alt="After - Foto wisuda outdoor yang sudah diedit" class="w-full h-80 object-cover" />
-                                        </img-comparison-slider>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2">Color Grading</span>
-                                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Brightness Fix</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Slide 2 -->
-                        <li class="splide__slide px-4">
-                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="p-6">
-                                    <h3 class="font-semibold text-xl mb-4 text-center text-gray-900">Portrait Studio - Professional Retouching</h3>
-                                    <div class="mb-6">
-                                        <img-comparison-slider class="w-full rounded-xl overflow-hidden">
-                                            <img slot="first" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face&auto=format&q=60&sat=-50&blur=1" alt="Before - Portrait studio mentah" class="w-full h-80 object-cover" />
-                                            <img slot="second" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face&auto=format&q=80&sat=10&sharp=20" alt="After - Portrait studio yang sudah diretouching" class="w-full h-80 object-cover" />
-                                        </img-comparison-slider>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium mr-2">Retouching</span>
-                                        <span class="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Skin Smoothing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Slide 3 -->
-                        <li class="splide__slide px-4">
-                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="p-6">
-                                    <h3 class="font-semibold text-xl mb-4 text-center text-gray-900">Foto Keluarga - Group Enhancement</h3>
-                                    <div class="mb-6">
-                                        <img-comparison-slider class="w-full rounded-xl overflow-hidden">
-                                            <img slot="first" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop&auto=format&q=60&sat=-80&con=-30" alt="Before - Foto keluarga mentah" class="w-full h-80 object-cover" />
-                                            <img slot="second" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop&auto=format&q=80&sat=15&con=25&bright=10" alt="After - Foto keluarga yang sudah diedit" class="w-full h-80 object-cover" />
-                                        </img-comparison-slider>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mr-2">Group Edit</span>
-                                        <span class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Lighting Fix</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Slide 4 -->
-                        <li class="splide__slide px-4">
-                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="p-6">
-                                    <h3 class="font-semibold text-xl mb-4 text-center text-gray-900">Foto Formal - Background Enhancement</h3>
-                                    <div class="mb-6">
-                                        <img-comparison-slider class="w-full rounded-xl overflow-hidden">
-                                            <img slot="first" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=400&fit=crop&crop=face&auto=format&q=60&sat=-60&con=-20" alt="Before - Foto formal mentah" class="w-full h-80 object-cover" />
-                                            <img slot="second" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=400&fit=crop&crop=face&auto=format&q=80&sat=10&con=30&bright=5" alt="After - Foto formal yang sudah diedit" class="w-full h-80 object-cover" />
-                                        </img-comparison-slider>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium mr-2">Background Fix</span>
-                                        <span class="inline-block bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Professional</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Slide 5 -->
-                        <li class="splide__slide px-4">
-                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="p-6">
-                                    <h3 class="font-semibold text-xl mb-4 text-center text-gray-900">Wisuda Indoor - Advanced Color Grading</h3>
-                                    <div class="mb-6">
-                                        <img-comparison-slider class="w-full rounded-xl overflow-hidden">
-                                            <img slot="first" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop&auto=format&q=60&sat=-80&con=-30" alt="Before - Foto wisuda indoor mentah" class="w-full h-80 object-cover" />
-                                            <img slot="second" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop&auto=format&q=60&sat=-80&con=-30" alt="After - Foto wisuda indoor yang sudah diedit" class="w-full h-80 object-cover" />
-                                        </img-comparison-slider>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mr-2">Indoor Fix</span>
-                                        <span class="inline-block bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Color Enhance</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Slide 6 -->
-                        <li class="splide__slide px-4">
-                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="p-6">
-                                    <h3 class="font-semibold text-xl mb-4 text-center text-gray-900">Graduation Portrait - Creative Enhancement</h3>
-                                    <div class="mb-6">
-                                        <img-comparison-slider class="w-full rounded-xl overflow-hidden">
-                                            <img slot="first" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=400&fit=crop&crop=face&auto=format&q=60&sat=-80&con=-30" alt="Before - Graduation portrait mentah" class="w-full h-80 object-cover" />
-                                            <img slot="second" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=400&fit=crop&crop=face&auto=format&q=80&sat=15&con=30&bright=12" alt="After - Graduation portrait yang sudah diedit" class="w-full h-80 object-cover" />
-                                        </img-comparison-slider>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="inline-block bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium mr-2">Creative Edit</span>
-                                        <span class="inline-block bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium">Portrait</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <li class="splide__slide p-2"><div class="bg-slate-100 rounded-2xl shadow-lg overflow-hidden p-6"><h3 class="font-bold text-xl mb-2 text-center text-gray-900">Menghilangkan Objek</h3><p class="text-center text-gray-600 mb-4 text-sm">Latar belakang ramai? Tenang, kami bersihkan.</p><img-comparison-slider class="w-full rounded-xl overflow-hidden shadow-md"><img slot="first" src="https://images.unsplash.com/photo-1594394430248-fe7974982a93?w=600&h=400&fit=crop&auto=format&q=60" alt="Before" /><img slot="second" src="https://images.unsplash.com/photo-1594394430248-fe7974982a93?w=600&h=400&fit=crop&auto=format&q=80&sat=20&con=10" alt="After" /></img-comparison-slider></div></div></li>
+                        <li class="splide__slide p-2"><div class="bg-slate-100 rounded-2xl shadow-lg overflow-hidden p-6"><h3 class="font-bold text-xl mb-2 text-center text-gray-900">Wajah Cerah & Natural</h3><p class="text-center text-gray-600 mb-4 text-sm">Jerawat atau kulit kusam? Kami haluskan dengan sempurna.</p><img-comparison-slider class="w-full rounded-xl overflow-hidden shadow-md"><img slot="first" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face&auto=format&q=60&blur=1" alt="Before" /><img slot="second" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face&auto=format&q=80&sat=10&sharp=20" alt="After" /></img-comparison-slider></div></div></li>
+                        <li class="splide__slide p-2"><div class="bg-slate-100 rounded-2xl shadow-lg overflow-hidden p-6"><h3 class="font-bold text-xl mb-2 text-center text-gray-900">Warna Lebih Hidup</h3><p class="text-center text-gray-600 mb-4 text-sm">Ubah foto yang pucat menjadi lebih dramatis dan berkesan.</p><img-comparison-slider class="w-full rounded-xl overflow-hidden shadow-md"><img slot="first" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=400&fit=crop&auto=format&q=60&sat=-100" alt="Before" /><img slot="second" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=400&fit=crop&auto=format&q=80&sat=20&con=15" alt="After" /></img-comparison-slider></div></div></li>
                     </ul>
                 </div>
-
             </div>
+        </div>
+    </section>
 
-            <!-- Portfolio Navigation -->
-            <div class="flex justify-center mt-8">
-                <div class="flex space-x-2" id="portfolio-dots">
-                    <!-- Dots akan di-generate otomatis oleh Splide -->
-                </div>
+    <!-- Proses Kami Section -->
+    <section id="proses" class="py-20 subtle-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl section-title text-gray-900 mb-4">Proses Kami Simpel & Cepat</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Hanya dalam 3 langkah mudah, foto wisuda Anda akan berubah drastis.</p>
             </div>
-
-            <!-- Portfolio Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12">
                 <div class="text-center">
-                    <div class="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                    <div class="text-gray-600">Foto Diedit</div>
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg border-2 border-indigo-200"><span class="text-3xl font-bold text-indigo-600">1</span></div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Kirim Foto & Keinginan</h3>
+                    <p class="text-gray-600">Hubungi kami via WhatsApp, kirim foto resolusi terbaik Anda, dan ceritakan apa yang ingin Anda perbaiki.</p>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl font-bold text-purple-600 mb-2">100+</div>
-                    <div class="text-gray-600">Klien Puas</div>
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg border-2 border-indigo-200"><span class="text-3xl font-bold text-indigo-600">2</span></div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Proses Edit Ajaib</h3>
+                    <p class="text-gray-600">Tim ahli kami akan mulai bekerja, menerapkan sentuhan profesional sesuai permintaan Anda.</p>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl font-bold text-green-600 mb-2">4.9</div>
-                    <div class="text-gray-600">Rating Bintang</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-yellow-600 mb-2">24 Jam</div>
-                    <div class="text-gray-600">Express Service</div>
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg border-2 border-indigo-200"><span class="text-3xl font-bold text-indigo-600">3</span></div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Revisi & Terima Hasil</h3>
+                    <p class="text-gray-600">Kami kirim hasilnya untuk Anda review. Minta perbaikan jika perlu, lalu terima mahakarya Anda!</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Harga Section -->
-    <section id="harga" class="py-20 bg-gray-50">
+    <section id="harga" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Paket Harga</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Pilih paket yang sesuai dengan kebutuhan dan budget Anda
-                </p>
+                <h2 class="text-4xl md:text-5xl section-title text-gray-900 mb-4">Satu Harga, Semua Foto Jadi Keren</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Setiap paket sudah termasuk <span class="font-bold text-indigo-600">Unlimited Edit Warna</span> untuk semua foto yang Anda kirim. Anda hanya perlu memilih berapa banyak foto yang butuh sentuhan detail (retouch).</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Basic Package -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
-                    <div class="text-center mb-8">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-image text-blue-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Basic</h3>
-                        <div class="text-4xl font-bold text-blue-600 mb-2">Rp 25K</div>
-                        <p class="text-gray-600">per foto</p>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-clock text-blue-500 mr-3"></i>
-                            <span>3-5 hari kerja</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-calendar text-blue-500 mr-3"></i>
-                            <span>7 hari periode layanan</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-redo text-blue-500 mr-3"></i>
-                            <span>1x Revisi</span>
-                        </li>
+                <!-- Paket Basic -->
+                <div class="bg-slate-50 rounded-2xl shadow-lg p-8 card-hover flex flex-col border">
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Basic</h3>
+                    <p class="text-center text-gray-500 mb-6">Hemat & Cukup</p>
+                    <div class="text-center text-5xl font-extrabold text-indigo-600 mb-2">Rp25K</div>
+                    <ul class="space-y-4 my-8 text-gray-700 flex-grow">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span><span class="font-bold">Unlimited</span> Edit Warna</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span><span class="font-bold">3 Foto</span> Pilihan untuk Retouch</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span>Pengerjaan 3-5 Hari</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span>1x Revisi (dalam 7 hari)</span></li>
                     </ul>
-                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                        Pilih Paket
-                    </button>
+                    <div class="bg-indigo-50 text-center p-3 rounded-lg mt-4">
+                        <p class="text-sm text-indigo-800">💡 Cocok untuk yang santai & ingin semua foto punya mood warna konsisten.</p>
+                    </div>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Basic." target="_blank" class="w-full bg-indigo-500 text-white py-3 mt-6 rounded-lg font-semibold hover:bg-indigo-600 transition-colors text-center">Pilih Paket Basic</a>
                 </div>
 
-                <!-- Standard Package -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover relative border-2 border-purple-500">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold">POPULER</span>
-                    </div>
-                    <div class="text-center mb-8">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-magic text-purple-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Standard</h3>
-                        <div class="text-4xl font-bold text-purple-600 mb-2">Rp 40K</div>
-                        <p class="text-gray-600">per foto</p>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-clock text-purple-500 mr-3"></i>
-                            <span>2-3 hari kerja</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-calendar text-purple-500 mr-3"></i>
-                            <span>10 hari periode layanan</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-redo text-purple-500 mr-3"></i>
-                            <span>3x Revisi</span>
-                        </li>
+                <!-- Paket Standard -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 card-hover relative border-2 border-indigo-500 flex flex-col transform scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2"><span class="bg-indigo-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg">Paling Laris</span></div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Standard</h3>
+                    <p class="text-center text-gray-500 mb-6">Cepat & Fleksibel</p>
+                    <div class="text-center text-5xl font-extrabold text-indigo-600 mb-2">Rp40K</div>
+                    <ul class="space-y-4 my-8 text-gray-700 flex-grow">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span><span class="font-bold">Unlimited</span> Edit Warna</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span><span class="font-bold">6 Foto</span> Pilihan untuk Retouch</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span>Pengerjaan 2-3 Hari</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span>3x Revisi (dalam 10 hari)</span></li>
                     </ul>
-                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                        Pilih Paket
-                    </button>
+                    <div class="bg-indigo-50 text-center p-3 rounded-lg mt-4">
+                        <p class="text-sm text-indigo-800">💡 Pas buat yang mau hasil cepat & jatah retouch lebih banyak.</p>
+                    </div>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Standard." target="_blank" class="w-full bg-indigo-600 text-white py-3 mt-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors text-center shadow-lg hover:shadow-xl">Pilih Paket Standard</a>
                 </div>
 
-                <!-- Premium Express Package -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
-                    <div class="text-center mb-8">
-                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-crown text-yellow-600 text-2xl"></i>
+                <!-- Paket Premium -->
+                <div class="bg-slate-50 rounded-2xl shadow-lg p-8 card-hover flex flex-col border relative overflow-hidden">
+                    <div class="absolute top-5 -right-16 rotate-45 animate-pulse">
+                        <div class="relative bg-gradient-to-r from-red-500 to-red-600 shadow-md w-52 h-10 flex items-center justify-center font-bold text-white text-[13px] tracking-widest uppercase overflow-hidden">                      
+                            <span class="drop-shadow-lg relative z-10">DISKON 40%</span>
+                            <div class="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent rounded-sm"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Premium Express</h3>
-                        <div class="text-4xl font-bold text-yellow-600 mb-2">Rp 60K</div>
-                        <p class="text-gray-600">per foto</p>
                     </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-bolt text-yellow-500 mr-3"></i>
-                            <span>&lt;24 Jam</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-calendar text-yellow-500 mr-3"></i>
-                            <span>14 hari periode layanan</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-infinity text-yellow-500 mr-3"></i>
-                            <span>Unlimited Revisi</span>
-                        </li>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Premium</h3>
+                    <p class="text-center text-gray-500 mb-6">Super Cepat & Maksimal</p>
+                    <div class="text-center flex justify-center items-baseline gap-2 mb-2">
+                        <span class="text-2xl font-medium text-gray-400 line-through">Rp100K</span>
+                        <span class="text-5xl font-extrabold text-indigo-600">Rp60K</span>
+                    </div>
+                    <ul class="space-y-4 my-8 text-gray-700 flex-grow">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span><span class="font-bold">Unlimited</span> Edit Warna</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span><span class="font-bold">10 Foto</span> Pilihan untuk Retouch</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span>Prioritas Kilat &lt;24 Jam</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mr-3 mt-1"></i><span>Revisi Tanpa Batas (14 hari)</span></li>
                     </ul>
-                    <button class="w-full bg-yellow-600 text-white py-3 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">
-                        Pilih Paket
-                    </button>
+                    <div class="bg-indigo-50 text-center p-3 rounded-lg mt-4">
+                        <p class="text-sm text-indigo-800">💡 Pilihan terbaik untuk yang wisudanya mepet atau mau hasil instan.</p>
+                    </div>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Premium." 
+                    target="_blank" 
+                    class="w-full bg-indigo-500 text-white py-3 mt-6 rounded-lg font-semibold hover:bg-indigo-600 transition-colors text-center">
+                    Pilih Paket Premium
+                    </a>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 subtle-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl section-title text-gray-900 mb-4">Masih Ada Pertanyaan?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kami sudah siapkan jawaban untuk pertanyaan paling umum dari klien kami.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="faq-item bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <summary class="font-semibold text-lg">
+                        Apa bedanya Edit Warna dan Retouch?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </summary>
+                    <div class="pt-4 text-gray-700 border-t mt-4">
+                        <p><strong>Edit Warna</strong> adalah penyesuaian warna dan suasana (mood) pada foto. Layanan ini kami berikan untuk SEMUA foto yang Anda kirim agar memiliki nuansa yang seragam dan sinematik.</p><br>
+                        <p><strong>Retouch</strong> adalah perbaikan detail seperti menghilangkan jerawat, noda, merapikan rambut/toga, atau menghaluskan kulit. Layanan ini hanya berlaku untuk foto-foto pilihan sesuai jatah paket Anda.</p>
+                    </div>
+                </details>
+                <details class="faq-item bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <summary class="font-semibold text-lg">
+                        Bagaimana cara mengirimkan semua foto untuk Edit Warna?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </summary>
+                    <div class="pt-4 text-gray-700 border-t mt-4">
+                        Cara termudah adalah dengan mengunggah semua foto Anda ke dalam satu folder di Google Drive, lalu bagikan link folder tersebut kepada kami melalui WhatsApp. Tim kami akan memandu Anda jika mengalami kesulitan.
+                    </div>
+                </details>
+                <details class="faq-item bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <summary class="font-semibold text-lg">
+                        Foto seperti apa yang sebaiknya saya pilih untuk di-retouch?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </summary>
+                    <div class="pt-4 text-gray-700 border-t mt-4">
+                        Pilihlah foto-foto terbaik Anda yang akan di-cetak atau diunggah ke media sosial sebagai foto utama. Biasanya ini adalah foto portrait (close-up), foto bersama keluarga inti, atau foto momen paling berkesan lainnya.
+                    </div>
+                </details>
+                <details class="faq-item bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <summary class="font-semibold text-lg">
+                        Bagaimana jika saya butuh retouch lebih dari jatah paket?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </summary>
+                    <div class="pt-4 text-gray-700 border-t mt-4">
+                        Tentu bisa! Anda dapat menambah jatah retouch dengan biaya tambahan yang sangat terjangkau. Silakan diskusikan kebutuhan Anda dengan tim kami saat melakukan pemesanan.
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -361,84 +277,13 @@
     <section id="testimoni" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Testimoni Klien</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Dengar langsung pengalaman klien yang puas dengan layanan kami
-                </p>
+                <h2 class="text-4xl md:text-5xl section-title text-gray-900 mb-4">Mereka Sudah Membuktikannya</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Jangan hanya percaya kata kami, dengar langsung dari klien yang puas.</p>
             </div>
-
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">AR</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Andi Rahmawan</h4>
-                            <p class="text-gray-600 text-sm">Universitas Gadjah Mada</p>
-                        </div>
-                    </div>
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Hasilnya sangat memuaskan! Foto wisuda saya yang awalnya kurang bagus jadi terlihat sangat profesional. 
-                        Pelayanannya juga cepat dan ramah."
-                    </p>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">SP</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Sari Putri</h4>
-                            <p class="text-gray-600 text-sm">Institut Teknologi Bandung</p>
-                        </div>
-                    </div>
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Tim PhotoGrad sangat detail dalam mengedit foto. Warna dan lighting foto wisuda saya jadi sempurna. 
-                        Harga juga sangat terjangkau untuk kualitas sebagus ini."
-                    </p>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">MF</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Muhammad Fajar</h4>
-                            <p class="text-gray-600 text-sm">Universitas Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Pengalaman yang luar biasa! Foto keluarga saat wisuda yang tadinya gelap dan blur, 
-                        setelah diedit jadi sangat jernih dan indah. Terima kasih PhotoGrad!"
-                    </p>
-                </div>
+                <div class="bg-slate-50 rounded-2xl p-8 shadow-lg card-hover"><div class="flex items-center mb-4"><img src="https://i.pravatar.cc/48?u=andi" alt="Foto Andi" class="w-12 h-12 rounded-full mr-4 shadow-md"><div_><h4 class="font-bold text-gray-900">Andi Rahmawan</h4><p class="text-gray-500 text-sm">Lulusan UGM</p></div_></div><div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-700 italic">"Gila, beda banget hasilnya! Foto wisuda yang tadinya biasa aja jadi kelihatan mahal dan profesional. Prosesnya juga cepat. Recommended!"</p></div>
+                <div class="bg-slate-50 rounded-2xl p-8 shadow-lg card-hover"><div class="flex items-center mb-4"><img src="https://i.pravatar.cc/48?u=sari" alt="Foto Sari" class="w-12 h-12 rounded-full mr-4 shadow-md"><div_><h4 class="font-bold text-gray-900">Sari Putri</h4><p class="text-gray-500 text-sm">Lulusan ITB</p></div_></div><div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-700 italic">"Awalnya ragu, tapi ternyata hasilnya di luar ekspektasi. Toga adik saya yang miring berhasil dirapikan. Detail kecil tapi penting banget. Terima kasih PhotoGrad!"</p></div>
+                <div class="bg-slate-50 rounded-2xl p-8 shadow-lg card-hover"><div class="flex items-center mb-4"><img src="https://i.pravatar.cc/48?u=fajar" alt="Foto Fajar" class="w-12 h-12 rounded-full mr-4 shadow-md"><div_><h4 class="font-bold text-gray-900">Muhammad Fajar</h4><p class="text-gray-500 text-sm">Lulusan UI</p></div_></div><div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-700 italic">"Penyelamat banget! Ada orang lewat di belakang foto keluarga pas wisuda, dan tim PhotoGrad berhasil menghilangkannya dengan rapi. Top service!"</p></div>
             </div>
         </div>
     </section>
@@ -446,98 +291,29 @@
     <!-- CTA Section -->
     <section class="py-20 gradient-bg">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h2 class="text-4xl font-bold mb-6">Siap Membuat Foto Wisuda Anda Sempurna?</h2>
-            <p class="text-xl mb-8 text-blue-100">
-                Hubungi kami sekarang dan dapatkan konsultasi gratis untuk project foto wisuda Anda
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
-                    <i class="fab fa-whatsapp mr-2"></i>
-                    Chat WhatsApp
-                </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                    <i class="fas fa-envelope mr-2"></i>
-                    Kirim Email
-                </button>
-            </div>
+            <h2 class="text-4xl font-bold mb-6">Siap Punya Foto Wisuda Impian?</h2>
+            <p class="text-xl mb-8 text-indigo-100">Jangan tunda lagi. Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik.</p>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20siap%20menyempurnakan%20foto%20wisuda%20saya!" target="_blank" class="bg-yellow-400 text-indigo-900 px-10 py-4 rounded-lg font-bold hover:bg-yellow-300 transition-all transform hover:scale-105 inline-flex items-center justify-center shadow-2xl">
+                <i class="fab fa-whatsapp mr-3"></i> Konsultasi Gratis Sekarang
+            </a>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-camera text-white text-sm"></i>
-                        </div>
-                        <span class="text-xl font-bold">PhotoGrad</span>
-                    </div>
-                    <p class="text-gray-400">
-                        Jasa edit foto wisuda profesional dengan kualitas terbaik dan harga terjangkau.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Layanan</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Edit Foto Wisuda</li>
-                        <li>Color Grading</li>
-                        <li>Retouching Portrait</li>
-                        <li>Background Editing</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Kontak</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-phone mr-2"></i> +62 812-3456-7890</li>
-                        <li><i class="fas fa-envelope mr-2"></i> info@photograd.com</li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i> Yogyakarta, Indonesia</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 PhotoGrad. All rights reserved.</p>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p>&copy; 2025 PhotoGrad. All rights reserved. Menyulap Momen Wisuda Anda.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling untuk navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('shadow-lg');
-            } else {
-                nav.classList.remove('shadow-lg');
+        document.addEventListener('DOMContentLoaded', function () {
+            var splideElement = document.getElementById('portfolio-slider');
+            if (splideElement) {
+                new Splide(splideElement, {
+                    type: 'loop', perPage: 2, perMove: 1, gap: '1rem', pagination: true, arrows: false, autoplay: true, interval: 4000,
+                    breakpoints: { 1024: { perPage: 2 }, 768: { perPage: 1 } }
+                }).mount();
             }
         });
     </script>
