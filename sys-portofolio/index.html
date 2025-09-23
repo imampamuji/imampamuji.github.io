@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imam Pamuji - System Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+            color: #EFEFEF;
+        }
+        .nav-scrolled {
+            background-color: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .project-link:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav id="navbar" class="fixed w-full p-6 z-50 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Imam Pamuji.</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#projects" class="text-gray-300 hover:text-yellow-400 transition-colors">Projects</a>
+                <a href="#contact" class="bg-yellow-400 text-black font-bold py-2 px-5 rounded-full hover:bg-yellow-500 transition-colors">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="h-screen flex items-center justify-center text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter leading-tight">
+                Analyzing Needs, Designing Digital Solutions.
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                With a passion for AI and data, I transform complex ideas into functional software solutions through meticulous system analysis and effective project management.
+            </p>
+        </div>
+    </header>
+
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-12">FEATURED PROJECTS</h2>
+            <div class="space-y-4">
+
+                <a href="https://drive.google.com/file/d/1BZtz646eK1p77LVautmXjPwmW2Xco-Cy/view?usp=drive_link" target="_blank" class="project-link block p-8 border border-gray-800 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold text-yellow-400">🌱 iJoin Application</h3>
+                            <p class="text-lg text-gray-400 mt-1">Analysis and recommendation of ornamental plants based on Augmented Reality.</p>
+                        </div>
+                        <i class="fas fa-arrow-right text-2xl text-gray-600 arrow-icon transition-transform duration-300"></i>
+                    </div>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1-98pKWLr9JgpAup_Y9tHTleImvoJtwdf/view?usp=drive_link" target="_blank" class="project-link block p-8 border border-gray-800 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold text-yellow-400">📷 WordVision</h3>
+                            <p class="text-lg text-gray-400 mt-1">A language learning application using AR and object recognition.</p>
+                        </div>
+                        <i class="fas fa-arrow-right text-2xl text-gray-600 arrow-icon transition-transform duration-300"></i>
+                    </div>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1-u1lhEbsGmgznoItmEgUgSw1kbqh2x7b/view?usp=drive_link" target="_blank" class="project-link block p-8 border border-gray-800 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold text-yellow-400">🚘 UNY Engineering Faculty Parking System</h3>
+                            <p class="text-lg text-gray-400 mt-1">A requirements analysis for a digital parking management system.</p>
+                        </div>
+                        <i class="fas fa-arrow-right text-2xl text-gray-600 arrow-icon transition-transform duration-300"></i>
+                    </div>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1ytH0kXPceuU4pkfdMLQ6eJIi7mGzumwA/view?usp=drive_link" target="_blank" class="project-link block p-8 border border-gray-800 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold text-yellow-400">📅 UNYMIND</h3>
+                            <p class="text-lg text-gray-400 mt-1">A schedule and note management application for university students.</p>
+                        </div>
+                        <i class="fas fa-arrow-right text-2xl text-gray-600 arrow-icon transition-transform duration-300"></i>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 text-center">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter">Let's Collaborate.</h2>
+            <p class="text-lg text-gray-400 mt-4">The fastest way to reach me is through WhatsApp.</p>
+            
+            <div class="mt-8">
+                <a href="https://wa.me/6285887120094" target="_blank" class="inline-flex items-center bg-yellow-400 text-black font-bold text-xl py-4 px-8 rounded-full hover:bg-yellow-500 transform hover:scale-105 transition-all duration-300">
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i> Chat on WhatsApp
+                </a>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-gray-500">Other ways to connect:</p>
+                <div class="mt-4 flex justify-center items-center space-x-6">
+                    <a href="mailto:imam275pamuji@gmail.com" class="text-gray-400 hover:text-yellow-400 transition-colors">Email</a>
+                    <span class="text-gray-600">/</span>
+                    <a href="https://www.linkedin.com/in/imam-pamuji/" target="_blank" class="text-gray-400 hover:text-yellow-400 transition-colors">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
