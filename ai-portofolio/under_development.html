@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction - Imam Pamuji</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+            color: #EFEFEF;
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.5);
+            }
+        }
+        .construction-icon {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .dot-pulse {
+            animation: dotPulse 1.5s infinite;
+        }
+        @keyframes dotPulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    
+    <nav class="fixed w-full p-6 z-50 bg-gray-900 bg-opacity-80 backdrop-blur-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold hover:text-blue-400 transition-colors">Imam Pamuji.</a>
+            <a href="index.html" class="text-gray-300 hover:text-blue-400 transition-colors">
+                <i class="fas fa-home mr-2"></i>Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <main class="min-h-screen flex items-center justify-center px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="construction-icon mb-8">
+                <i class="fas fa-hard-hat text-8xl text-blue-500"></i>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight glow mb-6">
+                Under Construction
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 mb-4">
+                This page is currently being built with AI magic
+                <span class="dot-pulse">.</span>
+                <span class="dot-pulse" style="animation-delay: 0.2s;">.</span>
+                <span class="dot-pulse" style="animation-delay: 0.4s;">.</span>
+            </p>
+            
+            <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+                I'm working hard to bring you detailed project information. Check back soon to see the full case study, technical details, and results of this project.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="index.html" class="inline-flex items-center bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transform hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-arrow-left mr-3"></i>Back to Portfolio
+                </a>
+                
+                <a href="index.html#contact" class="inline-flex items-center bg-gray-800 text-white font-bold py-3 px-8 rounded-full hover:bg-gray-700 transform hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-envelope mr-3"></i>Contact Me
+                </a>
+            </div>
+
+            <div class="mt-16 p-8 bg-gray-900 rounded-lg border border-gray-800">
+                <h3 class="text-2xl font-bold mb-4 text-blue-400">Want to know more about this project?</h3>
+                <p class="text-gray-400 mb-6">
+                    Feel free to reach out directly via WhatsApp or email. I'd be happy to discuss the project details, methodology, and results.
+                </p>
+                <div class="flex gap-4 justify-center flex-wrap">
+                    <a href="https://wa.me/6285887120094" target="_blank" class="inline-flex items-center text-green-400 hover:text-green-300 transition-colors">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i>WhatsApp
+                    </a>
+                    <span class="text-gray-600">|</span>
+                    <a href="mailto:imam275pamuji@gmail.com" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>Email
+                    </a>
+                    <span class="text-gray-600">|</span>
+                    <a href="https://www.linkedin.com/in/imam-pamuji/" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Imam Pamuji. AI Engineer specializing in NLP & LLM.</p>
+    </footer>
+
+</body>
+</html>
