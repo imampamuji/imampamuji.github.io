@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Masuk dengan PIN</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Simple shake animation for wrong PIN */
+    @keyframes shake {
+      10%, 90% { transform: translateX(-1px); }
+      20%, 80% { transform: translateX(2px); }
+      30%, 50%, 70% { transform: translateX(-4px); }
+      40%, 60% { transform: translateX(4px); }
+    }
+    .shake {
+      animation: shake 420ms ease-in-out;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center p-6">
+  <main class="w-full max-w-md bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl shadow-lg p-8">
+    <header class="text-center mb-6">
+      <h1 class="text-2xl font-semibold text-slate-800">Masuk dengan PIN</h1>
+      <p class="text-sm text-slate-500 mt-2">Masukkan 6 digit PIN untuk melanjutkan</p>
+    </header>
+
+    <form id="pinForm" class="space-y-4" autocomplete="off" novalidate>
+      <label for="pin" class="sr-only">PIN</label>
+
+      <div id="inputWrap" class="flex items-center justify-center gap-3">
+        <!-- Visual PIN boxes -->
+        <input
+          id="pin"
+          name="pin"
+          type="password"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="6"
+          autocomplete="one-time-code"
+          placeholder="••••••"
+          class="w-full text-center rounded-xl border border-slate-200 px-4 py-3 text-lg tracking-widest font-mono focus:outline-none focus:ring-2 focus:ring-indigo-300"
+          aria-label="Masukkan PIN 6 digit"
+        />
+      </div>
+
+      <div class="flex items-center justify-between gap-3">
+        <button type="submit" id="submitBtn" class="flex-1 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-sm">
+          Masuk
+        </button>
+        <button type="button" id="clearBtn" class="px-4 py-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50">
+          Hapus
+        </button>
+      </div>
+
+      <p id="msg" class="text-center text-sm text-red-600 mt-1 min-h-[1.1rem]"></p>
+    </form>
+
+  </main>
+
+  <script>
+    // === GANTI INI dengan link tujuanmu ===
+    const targetLink = "https://example.com"; // <-- ganti ke link-mu
+
+    // === Jika mau ganti PIN default di sini ===
+    const VALID_PIN = "110703";
+
+    // DOM
+    const pinInput = document.getElementById("pin");
+    const form = document.getElementById("pinForm");
+    const msg = document.getElementById("msg");
+    const inputWrap = document.getElementById("inputWrap");
+    const submitBtn = document.getElementById("submitBtn");
+    const clearBtn = document.getElementById("clearBtn");
+
+    // Fokus dan pilih saat load
+    window.addEventListener("load", () => {
+      pinInput.focus();
+      pinInput.select();
+    });
+
+    // Hanya izinkan angka
+    pinInput.addEventListener("input", (e) => {
+      // remove non-digit chars
+      const cleaned = e.target.value.replace(/\D/g, "");
+      if (cleaned !== e.target.value) {
+        e.target.value = cleaned;
+      }
+      // maxLength enforced by attribute; update message clear
+      msg.textContent = "";
+      inputWrap.classList.remove("shake");
+    });
+
+    // Clear button
+    clearBtn.addEventListener("click", () => {
+      pinInput.value = "";
+      msg.textContent = "";
+      pinInput.focus();
+    });
+
+    // Submit handler
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const pin = pinInput.value.trim();
+
+      // Basic validation
+      if (pin.length < 6) {
+        showError("PIN harus 6 digit.");
+        return;
+      }
+
+      if (pin === VALID_PIN) {
+        // Optionally disable inputs while redirecting
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Memeriksa…";
+        // Direct to the target link
+        // Use location.replace so user can't go back to PIN page
+        try {
+          window.location.replace(targetLink);
+        } catch (err) {
+          // Fallback
+          window.location.href = targetLink;
+        }
+      } else {
+        showError("PIN salah. Coba lagi.");
+      }
+    });
+
+    // Enter key also triggers submit automatically via form
+
+    function showError(text) {
+      msg.textContent = text;
+      // add shake animation
+      inputWrap.classList.remove("shake");
+      // force reflow to restart animation
+      void inputWrap.offsetWidth;
+      inputWrap.classList.add("shake");
+      pinInput.focus();
+      pinInput.select();
+    }
+
+    // Optional: prevent pasting non-digit text
+    pinInput.addEventListener("paste", (e) => {
+      const pasted = (e.clipboardData || window.clipboardData).getData("text");
+      if (/\D/.test(pasted)) {
+        e.preventDefault();
+        // allow only digits from paste
+        const digits = pasted.replace(/\D/g, "").slice(0, 6 - pinInput.value.length);
+        if (digits) {
+          const pos = pinInput.selectionStart || pinInput.value.length;
+          pinInput.value = (pinInput.value.slice(0, pos) + digits + pinInput.value.slice(pos)).slice(0, 6);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
