@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>Housekeeping Tara - iMaji-Notes</title>
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">iMaji-Notes</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">Housekeeping Tara</h1>
+          <div class="article-info">
+            <div>
+              <span
+                >Created At：<time datetime="1774489534158"
+                  >2026-03-26 08:45</time
+                ></span
+              >
+              <span
+                >Updated At：<time datetime="1774497731410"
+                  >2026-03-26 11:02</time
+                ></span
+              >
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><p> </p>
+<p>Conversation Manager - process_message<br />
+<br class="jop-noMdConv" />Pattern nya:</p>
+<p>process_message():<br />
+        <strong>state handler</strong></p>
+<ul>
+<li>
+<ul>
+<li>self.state.current_report_session<br />
+- self.state.waiting_for_report_confirmation</li>
+</ul>
+</li>
+</ul>
+<p>        <strong>intent handler</strong></p>
+<ul>
+<li>
+<ul>
+<li>get_intent_handler (data.intent) -&gt; enum</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<p>_INTENT_HANDLER = {</p>
+<p>        Intent.REPORT = _report(),</p>
+<p>}</p>
+<p> </p>
+<p> </p>
+<hr />
+<p>python:<br />
+<br class="jop-noMdConv" /></p>
+<p>class Human(nama: str, umur: int) -&gt; str:<br />
+          def get_info(self) -&gt; str :</p>
+<p>                return self.nama</p>
+<p> </p>
+<p>human1 = Human("imam", 17)</p>
+<hr />
+<p> </p>
+<p>go:</p>
+<p>type Human struct {</p>
+<p>  nama string</p>
+<p>  umur int</p>
+<p>}</p>
+<p>func (h Human)  getInfo() (string, age) {</p>
+<p>        return h.nama, h.umur</p>
+<p>}</p>
+<p>func getInfo2(h Human) (string, age) {</p>
+<p>        return h.nama, h.umur</p>
+<p>}</p>
+<p> </p>
+<p>human := Human{</p>
+<p>        nama: "sam",</p>
+<p>        umur: 17,</p>
+<p>}</p>
+<p>getInfo2(human)</p>
+<p>human.getInfo()</p>
+<p> </p>
+</div>
+      </article>
+    </div>
+  </body>
+</html>
