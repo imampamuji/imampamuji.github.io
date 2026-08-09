@@ -2,10 +2,10 @@
 # llmphone one-shot setup for Termux (Android)
 # Installs llama.cpp, downloads Qwen3-0.6B Q4_K_M, writes chat/server helpers.
 #
-# One-liner (after you host this file, or copy it onto the phone):
-#   curl -fsSL <URL-to-install.sh> | bash
+# One-liner:
+#   curl -fsSL https://raw.githubusercontent.com/imampamuji/imampamuji.github.io/master/llmphone/install.sh | bash
 # Start API server at the end:
-#   curl -fsSL <URL-to-install.sh> | bash -s -- --server
+#   curl -fsSL https://raw.githubusercontent.com/imampamuji/imampamuji.github.io/master/llmphone/install.sh | bash -s -- --server
 #
 # Env overrides:
 #   LLMPHONE_HOME   install dir (default: ~/llmphone)
